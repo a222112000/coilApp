@@ -1,13 +1,16 @@
 <table>
   <tr>
     <td>
-      <img width="391" alt="Screenshot 2023-07-09 at 20 04 02" src="https://github.com/a222112000/coilApp/assets/26028054/4097cdb7-cc40-4c03-98c4-170318f9ecba">
+      <img width="403" alt="Screenshot 2023-07-09 at 20 23 57" src="https://github.com/a222112000/coilApp/assets/26028054/0998ece0-3878-48b8-b57a-2032b1f07649">
     </td>
     <td>
-    <img width="402" alt="Screenshot 2023-07-09 at 20 04 14" src="https://github.com/a222112000/coilApp/assets/26028054/7ea9d694-6ea9-40da-90b1-216d11c85ace">
+    <img width="394" alt="Screenshot 2023-07-09 at 20 24 10" src="https://github.com/a222112000/coilApp/assets/26028054/9984d61a-2bc2-48d7-8644-8aa94fd304d9">
     </td>
     <td>
-    <img width="403" alt="Screenshot 2023-07-09 at 20 04 26" src="https://github.com/a222112000/coilApp/assets/26028054/853d8343-940f-4e34-8446-97d3adf016cd">
+    <img width="400" alt="Screenshot 2023-07-09 at 20 24 20" src="https://github.com/a222112000/coilApp/assets/26028054/2c7bb576-9759-4841-bd9c-c93ad43ebab9">
+    </td>
+    <td>
+    <img width="402" alt="Screenshot 2023-07-09 at 20 24 58" src="https://github.com/a222112000/coilApp/assets/26028054/98e2ce9d-ed04-4fa8-8b0d-f02e88398cb7">
     </td>
   </tr>
 </table>
