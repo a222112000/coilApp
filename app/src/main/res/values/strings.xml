@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Coil</string>
+    <string name="Random">World Coil</string>
+    <string name="search">Search...</string>
+    <string name="user">User</string>
+    <string name="all_pages">All pages:</string>
+    <string name="total_photos">total photos:</string>
+    <string name="Per_page">Per Page:</string>
+    <string name="logo">Coil App Logo</string>
+</resources>
