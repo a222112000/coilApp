@@ -14,6 +14,9 @@
     <img width="402" alt="Screenshot 2023-07-09 at 20 24 58" src="https://github.com/a222112000/coilApp/assets/26028054/98e2ce9d-ed04-4fa8-8b0d-f02e88398cb7">
     </td>
   </tr>
+  <tr span="3"><td>
+    <img width="389" alt="Screenshot 2023-07-09 at 20 33 43" src="https://github.com/a222112000/coilApp/assets/26028054/a249365c-6204-4710-9e63-3f4d119c03e4">
+  </td></tr>
 </table>
 
 
