@@ -6,6 +6,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -112,7 +113,7 @@ fun ImageDetails(
                                 color = Color.Red,
                                 shape = RoundedCornerShape(size = 1.dp)
                             )
-                            .size(730.dp)
+                            .size(930.dp)
                             .clip(RoundedCornerShape(topEnd = 1.dp, topStart = 1.dp)),
                         contentScale = ContentScale.Fit,
                         model = "https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg"

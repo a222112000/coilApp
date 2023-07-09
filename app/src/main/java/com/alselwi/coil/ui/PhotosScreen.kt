@@ -101,7 +101,9 @@ fun PhotosScreen(
                             Row() {
 
                                 Card(
-                                    modifier = Modifier.size(48.dp).testTag("circle"),
+                                    modifier = Modifier
+                                        .size(48.dp)
+                                        .testTag("circle"),
                                     shape = CircleShape,
                                 ) {
 
@@ -129,7 +131,11 @@ fun PhotosScreen(
                         }
                     })
 
-    }, modifier = Modifier.fillMaxWidth()) {
+    }, modifier = Modifier.fillMaxWidth(),
+    bottomBar = {
+        BannerAds()
+    }
+        ) {
 
         Surface(
             color = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -139,7 +145,6 @@ fun PhotosScreen(
             Column(modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 70.dp), Arrangement.Center) {
-                BannerAds()
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
