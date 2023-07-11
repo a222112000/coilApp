@@ -1,5 +1,5 @@
 <table>
-  <tr><th>Users</th><th>User's Images</th><th>Selected Image</th><th>Search</th></tr>
+  <tr><th>Users</th><th>Search Page</th><th>Typing for Search</th><th>User's Images</th></tr>
   <tr>
     <td>
      <img width="397" alt="Screenshot 2023-07-11 at 20 53 20" src="https://github.com/a222112000/coilApp/assets/26028054/f8ef83e6-712c-4288-95a8-bcd799dfd121">
