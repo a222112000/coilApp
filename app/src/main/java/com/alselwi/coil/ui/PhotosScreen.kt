@@ -33,7 +33,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CardElevation
@@ -41,6 +45,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -78,6 +83,8 @@ import coil.compose.AsyncImage
 import com.alselwi.coil.R
 import com.alselwi.coil.ads.BannerAds
 import com.alselwi.coil.ui.Photos.PhotosViewModel
+import com.alselwi.coil.ui.bottomBar.BottomBar
+import com.alselwi.coil.ui.topBar.TopBar
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -88,52 +95,17 @@ fun PhotosScreen(
     context: Context
 ) {
     val state = viewModel.Photos.value.photos?.flow?.collectAsLazyPagingItems()
-    val search = viewModel.getPhotos.value
+
     var filteredPhotos by remember { mutableStateOf(state) }
     var isSearching by remember { viewModel.isSearching }
     var isLoading by remember {
         viewModel.isLoading
     }
     Scaffold(topBar = {
-                TopAppBar(
-                    title = {
-                        Row(horizontalArrangement = Arrangement.SpaceBetween) {
-                            Row() {
-
-                                Card(
-                                    modifier = Modifier
-                                        .size(48.dp)
-                                        .testTag("circle"),
-                                    shape = CircleShape,
-                                ) {
-
-                                    Image(
-                                        painterResource(R.mipmap.ic_logo_coil_3),
-                                        contentDescription = "",
-                                        contentScale = ContentScale.Crop,
-                                        modifier = Modifier.fillMaxSize()
-                                    )
-                                 //   Image(ImageBitmap.imageResource(id = R.mipmap.ic_logo_coil_round), contentDescription = null)
-                                }
-                                Text(
-                                    text = stringResource(R.string.Random),
-                                    modifier = Modifier.padding(top = 13.dp, end = 8.dp),
-                                    style = TextStyle(color = Color.Black, fontSize = 27.sp),
-                                    textAlign = TextAlign.Start,
-                                )
-                            }
-                            SearchBar(
-                                hint = stringResource(id = R.string.search),
-
-                                ) {
-                                viewModel.searchItems(it)
-                            }
-                        }
-                    })
-
+        TopBar()
     }, modifier = Modifier.fillMaxWidth(),
     bottomBar = {
-        BannerAds()
+        BottomBar(navController)
     }
         ) {
 
@@ -145,6 +117,7 @@ fun PhotosScreen(
             Column(modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 70.dp), Arrangement.Center) {
+                BannerAds()
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -152,15 +125,7 @@ fun PhotosScreen(
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(1),
                         content = {
-                            if (isSearching) {
-                                search.photos?.let {
-                                    items(it) {
-                                        PhotosItem(photo = it,
-                                            onUserPhotoClick = { navController.navigate(Screen.UserPhotos.route + "/${it.owner}") }
-                                        )
-                                    }
-                                }
-                            } else if(!isLoading) {
+                             if(!isLoading) {
                                 state?.itemCount?.let {
                                     items(it) { index ->
                                         state.get(index)?.let {

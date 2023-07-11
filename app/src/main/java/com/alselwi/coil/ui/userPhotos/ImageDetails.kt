@@ -35,6 +35,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.alselwi.coil.ads.BannerAds
+import com.alselwi.coil.ui.bottomBar.BottomBar
+import com.alselwi.coil.ui.topBar.TopBar
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,16 +46,22 @@ fun ImageDetails(
     owner: String,
     farm: String,
     server: String,
-    secret: String
+    secret: String,
+navController: NavController
     ){
 
     Card(modifier = Modifier.fillMaxWidth()) {
         Scaffold(
+            topBar = {
+                     TopBar()
+            },
             bottomBar = {
-                BannerAds()
+                BottomBar(navController = navController)
+
             }
         ) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
+
                 Text(
                     text = "User Id:${owner} ",
                     style = TextStyle(
@@ -119,7 +127,12 @@ fun ImageDetails(
                         model = "https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg"
                     )
                 }
+
             }
         }
     }
+    Column(Modifier.padding(top = 70.dp)) {
+        BannerAds()
+    }
+
 }

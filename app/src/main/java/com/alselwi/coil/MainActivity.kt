@@ -23,6 +23,9 @@ import com.alselwi.coil.ads.BannerAds
 import com.alselwi.coil.ui.PhotosScreen
 import com.alselwi.coil.ui.Screen
 import com.alselwi.coil.ui.UserPhotosScreen
+import com.alselwi.coil.ui.search.Search
+import com.alselwi.coil.ui.settings.PrivacyScreen
+import com.alselwi.coil.ui.settings.SettingsScreen
 import com.alselwi.coil.ui.theme.FlickrApiTheme
 import com.alselwi.coil.ui.userPhotos.ImageDetails
 import dagger.hilt.android.AndroidEntryPoint
@@ -62,9 +65,19 @@ class MainActivity : ComponentActivity() {
                                     link.getString("owner")!!,
                                     link.getString("farm")!!,
                                     link.getString("server")!!,
-                                    link.getString("secret")!!
+                                    link.getString("secret")!!,
+                                    navController = navController
                                 )
                             }
+                        }
+                        composable(route = Screen.SearchScreen.route){
+                            Search(navController = navController)
+                        }
+                        composable(route = Screen.SettingsScreen.route){
+                            SettingsScreen(navController = navController)
+                        }
+                        composable(route = Screen.PrivacyScreen.route){
+                            PrivacyScreen(navController = navController)
                         }
                     }
                 }

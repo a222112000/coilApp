@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Coil</string>
-    <string name="Random">World Coil</string>
+    <string name="Random">World Images</string>
     <string name="search">Search...</string>
     <string name="user">User</string>
     <string name="all_pages">All pages:</string>
     <string name="total_photos">total photos:</string>
     <string name="Per_page">Per Page:</string>
     <string name="logo">Coil App Logo</string>
+    <string name="privacy">
+        Coil is passionately committed to the privacy of using the coil app.
+        We strive to create consistent standards for all of our users.
+        This Privacy Policy explains how Coil collects data from flickr api which holds millions of users and discloses what information available publicly from and about each user photos when you use the Coil App, it will not take any data
+        from the users, This App is intend to taking users to views and pictures from people around the world.
+        It is mimic the tourist museum and place\'s photos but without traveling to any place just display what people like to see.
+    </string>
 </resources>
