@@ -5,4 +5,7 @@ sealed class Screen(val route: String){
     object UserPhotos: Screen("user_photos")
 
     object PhotoDetails: Screen("photo_details")
+    object SearchScreen: Screen("search_screen")
+    object SettingsScreen: Screen("settings_screen")
+    object PrivacyScreen: Screen("privacy_screen")
 }

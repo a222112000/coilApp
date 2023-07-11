@@ -2,6 +2,7 @@ package com.alselwi.coil.ui
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -38,6 +39,8 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import coil.compose.AsyncImage
 import com.alselwi.coil.R
 import com.alselwi.coil.ads.BannerAds
+import com.alselwi.coil.ui.bottomBar.BottomBar
+import com.alselwi.coil.ui.topBar.TopBar
 import com.alselwi.coil.ui.userPhotos.UserPhotosViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -51,36 +54,40 @@ fun UserPhotosScreen(navController: NavController,viewModel: UserPhotosViewModel
 
     Scaffold(modifier = Modifier.fillMaxWidth(),
         topBar = {
-            BannerAds()
+            Column() {
+                TopBar()
+                BannerAds()
+            }
+
         },
     bottomBar = {
+        Column(Modifier.background(Color.LightGray)) {
+
         MaterialTheme(
 
             typography = MaterialTheme.typography,
             shapes = MaterialTheme.shapes,
         ) {
-            BottomAppBar(
-                content = {
-                    LazyColumn {
-                        item {
-                            Text(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .align(CenterVertically),
-                                textAlign = TextAlign.Center,
-                                text = "${
-                                    stringResource(
-                                        id = R.string.user
-                                    )
-                                } ${views.photos?.photos?.photo?.get(0)?.owner}\n" +
-                                        "${stringResource(id = R.string.all_pages)} ${views.photos?.photos?.pages} " +
-                                        "\n ${stringResource(id = R.string.total_photos)} ${views.photos?.photos?.total} " +
-                                        "${stringResource(id = R.string.Per_page)} ${views.photos?.photos?.perpage}",
+            LazyColumn {
+                item {
+                    Text(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        textAlign = TextAlign.Center,
+                        text = "${
+                            stringResource(
+                                id = R.string.user
                             )
-                        }
-                    }
-                })
+                        } ${views.photos?.photos?.photo?.get(0)?.owner} " +
+                                "${stringResource(id = R.string.all_pages)} ${views.photos?.photos?.pages} " +
+                                " ${stringResource(id = R.string.total_photos)} ${views.photos?.photos?.total} " +
+                                "${stringResource(id = R.string.Per_page)} ${views.photos?.photos?.perpage}",
+                    )
+                }
+            }
         }
+        BottomBar(navController = navController)
+    }
     }) {
         Box(
             modifier = Modifier
